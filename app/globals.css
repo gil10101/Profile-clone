@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500);
+
+/* Base styles */
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: #16191b;
+  color: #e2e6e8;
+}
+
+/* Project link hover animations */
+.project-link {
+  @apply relative inline-flex items-baseline;
+}
+
+.project-link .index {
+  @apply text-gray-500 relative;
+  transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-link .title {
+  @apply relative;
+  transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.9;
+}
+
+.project-link .title::after {
+  content: '';
+  @apply absolute bottom-0 left-0 h-px bg-gray-700;
+  width: 24px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translate3d(calc(-100% - 8px), 0, 0);
+}
+
+.project-link:hover .index {
+  opacity: 0.4;
+}
+
+.project-link:hover .title {
+  opacity: 1;
+}
+
+.project-link:hover .title::after {
+  transition: all 0.275s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: none;
+  background: #bfbfbf;
+  width: 100%;
+}
+
+/* Cursor animation */
+@keyframes cursor-blink {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.cursor {
+  animation: cursor-blink 1s infinite;
+}
+
+/* Section title styles */
+.section-title {
+  @apply text-xs uppercase tracking-wider text-gray-500;
+  opacity: 0.2;
+}
+
+.section-title::after {
+  content: '.';
+}
+
+/* Footer status hover */
+.status {
+  transition: opacity 0.66s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.25;
+}
+
+.status:hover {
+  opacity: 0.75;
+}
+
+/* Social link hover */
+.social-link {
+  transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.66;
+}
+
+.social-link:hover {
+  opacity: 1;
+}
+
+/* Project footer animations */
+.project-footer {
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+}
+
+.project-footer.show {
+  transform: translateY(-50px);
+  transition-delay: 0.2s;
+  pointer-events: inherit;
+}
+
+.project-footer.open {
+  transform: translateY(-100%);
+  transition-delay: 0s;
+}
+
+/* Menu button hover */
+.menu-button .icon {
+  transition: transform 0.2s ease;
+}
+
+.menu-button:hover .icon {
+  transform: scale(1.25);
+}
+
+/* Loading animation */
+@keyframes loading-pulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.loading-block {
+  animation: loading-pulse 0.33s linear infinite;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 719px) {
+  .projects-grid {
+    columns: 2 auto;
+    column-gap: 24px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .projects-grid {
+    columns: 1 auto;
+  }
+}
+
+:root {
+  --foreground: 220, 220, 220;
+  --background: 17, 17, 17;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.loading-text {
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
