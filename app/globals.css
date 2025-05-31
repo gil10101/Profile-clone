@@ -5,10 +5,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,300,400,500);
 
 /* Base styles */
-body {
+body, html {
   font-family: 'Roboto Mono', monospace;
   background: #16191b;
   color: #e2e6e8;
+  overflow: auto;
+  height: 100%;
 }
 
 /* Project link hover animations */
@@ -179,5 +181,22 @@ body {
   letter-spacing: 0;
   opacity: 0.7;
   line-height: 1.5;
+}
+
+/* Override problematic rules from animations.css */
+html, body {
+  overflow: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+/* Ensure mobile scrolling works */
+@media (max-width: 768px) {
+  html, body {
+    overflow: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
 }
 

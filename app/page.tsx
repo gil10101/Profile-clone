@@ -36,6 +36,7 @@ export default function Home() {
     "Hallo", // German
     "Ola", // Portuguese
     "Szia", // Hungarian
+    "Hallo", // Dutch
   ]
 
   const projects = [
@@ -136,7 +137,7 @@ export default function Home() {
   if (!isClient) return null;
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center font-mono text-gray-300 bg-[#111111] overflow-hidden">
+    <main className="min-h-screen flex flex-col font-mono text-gray-300 bg-[#111111]">
       {isLoading && <Loader message="Initializing interface..." loadTime={800} />}
       
       {/* Single transition effect for better performance */}
@@ -148,17 +149,17 @@ export default function Home() {
         flipX={true}
       />
       
-      <div className={`w-full max-w-4xl mx-auto px-4 py-12 transition-all duration-300 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`} ref={contentRef}>
+      <div className={`w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-1 flex flex-col justify-center transition-all duration-300 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`} ref={contentRef}>
         <div className="flex flex-col items-center">
-          <h1 className="text-2xl mb-12 self-center">
+          <h1 className="text-xl sm:text-2xl mb-8 sm:mb-12 self-center">
             <Suspense fallback={<div className="loading-text">Loading...</div>}>
               {<Typer text={greeting} onComplete={handleTyperComplete} />}
             </Suspense>
           </h1>
           
           {/* Info section with reduced delay */}
-          <div className={`w-full grid grid-cols-[60px_1fr] gap-x-2 mb-16 transition-all duration-300 delay-25 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
-            <div className="text-gray-500 uppercase text-sm">INFO</div>
+          <div className={`w-full grid grid-cols-[50px_1fr] sm:grid-cols-[60px_1fr] gap-x-2 mb-12 sm:mb-16 transition-all duration-300 delay-25 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
+            <div className="text-gray-500 uppercase text-xs sm:text-sm">INFO</div>
             <div>
               {isLoading ? (
                 <div className="loading-text">
@@ -189,13 +190,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-[60px_1fr] gap-x-2 mb-16 transition-all duration-300 delay-100 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
-            <div className="text-gray-500 uppercase text-sm">LABS</div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+          <div className={`w-full grid grid-cols-[50px_1fr] sm:grid-cols-[60px_1fr] gap-x-2 mb-12 sm:mb-16 transition-all duration-300 delay-100 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
+            <div className="text-gray-500 uppercase text-xs sm:text-sm">LABS</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8">
               <div>
                 {column1.map((project) => (
-                  <div key={project.id} className="mb-1">
-                    <Link href={project.link} className="project-link group block">
+                  <div key={project.id} className="mb-1 sm:mb-1">
+                    <Link href={project.link} className="project-link group block py-1 sm:py-0">
                       <div className="inline-flex items-baseline">
                         <span className="index">
                           {project.id}
@@ -222,8 +223,8 @@ export default function Home() {
 
               <div>
                 {column2.map((project) => (
-                  <div key={project.id} className="mb-1">
-                    <Link href={project.link} className="project-link group block">
+                  <div key={project.id} className="mb-1 sm:mb-1">
+                    <Link href={project.link} className="project-link group block py-1 sm:py-0">
                       <div className="inline-flex items-baseline">
                         <span className="index">
                           {project.id}
@@ -250,8 +251,8 @@ export default function Home() {
 
               <div>
                 {column3.map((project) => (
-                  <div key={project.id} className="mb-1">
-                    <Link href={project.link} className="project-link group block">
+                  <div key={project.id} className="mb-1 sm:mb-1">
+                    <Link href={project.link} className="project-link group block py-1 sm:py-0">
                       <div className="inline-flex items-baseline">
                         <span className="index">
                           {project.id}
@@ -278,13 +279,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-[60px_1fr] gap-x-2 mb-16 transition-all duration-300 delay-150 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
-            <div className="text-gray-500 uppercase text-sm">SKILLS</div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
+          <div className={`w-full grid grid-cols-[50px_1fr] sm:grid-cols-[60px_1fr] gap-x-2 mb-12 sm:mb-16 transition-all duration-300 delay-150 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
+            <div className="text-gray-500 uppercase text-xs sm:text-sm">SKILLS</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8">
               <div>
                 {skillsColumn1.map((skill) => (
-                  <div key={skill.id} className="mb-1">
-                    <div className="inline-flex items-baseline">
+                  <div key={skill.id} className="mb-1 sm:mb-1">
+                    <div className="inline-flex items-baseline py-1 sm:py-0">
                       <span className="text-gray-500 relative">
                         {skill.id}
                         <span className="absolute -bottom-px left-0 w-full h-px bg-gray-700"></span>
@@ -311,8 +312,8 @@ export default function Home() {
 
               <div>
                 {skillsColumn2.map((skill) => (
-                  <div key={skill.id} className="mb-1">
-                    <div className="inline-flex items-baseline">
+                  <div key={skill.id} className="mb-1 sm:mb-1">
+                    <div className="inline-flex items-baseline py-1 sm:py-0">
                       <span className="text-gray-500 relative">
                         {skill.id}
                         <span className="absolute -bottom-px left-0 w-full h-px bg-gray-700"></span>
@@ -339,8 +340,8 @@ export default function Home() {
 
               <div>
                 {skillsColumn3.map((skill) => (
-                  <div key={skill.id} className="mb-1">
-                    <div className="inline-flex items-baseline">
+                  <div key={skill.id} className="mb-1 sm:mb-1">
+                    <div className="inline-flex items-baseline py-1 sm:py-0">
                       <span className="text-gray-500 relative">
                         {skill.id}
                         <span className="absolute -bottom-px left-0 w-full h-px bg-gray-700"></span>
@@ -367,12 +368,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`w-full grid grid-cols-[60px_1fr] gap-x-2 mb-16 transition-all duration-300 delay-200 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
-            <div className="text-gray-500 uppercase text-sm">CONTACT</div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+          <div className={`w-full grid grid-cols-[50px_1fr] sm:grid-cols-[60px_1fr] gap-x-2 mb-8 sm:mb-16 transition-all duration-300 delay-200 ${showContent ? 'opacity-100 transform-none' : 'opacity-0 translate-y-4'}`}>
+            <div className="text-gray-500 uppercase text-xs sm:text-sm">CONTACT</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-8">
               {contacts.map((contact) => (
-                <div key={contact.id} className="mb-1">
-                  <div className="inline-flex items-baseline">
+                <div key={contact.id} className="mb-1 sm:mb-1">
+                  <div className="inline-flex items-baseline py-1 sm:py-0">
                     <span className="text-gray-500 relative">
                       {contact.name}
                       <span className="absolute -bottom-px left-0 w-full h-px bg-gray-700"></span>
