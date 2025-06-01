@@ -37,6 +37,7 @@ export default function Home() {
     "Ola", // Portuguese
     "Szia", // Hungarian
     "Hallo", // Dutch
+    "Aloha", // Hawaiian
   ]
 
   const projects = [
@@ -64,7 +65,7 @@ export default function Home() {
   ]
 
   const skills = [
-    { id: "000", name: "JavaScript / TypeScript" },
+    { id: "000", name: "TypeScript" },
     { id: "001", name: "WebGL / Three.js" },
     { id: "002", name: "GLSL Shaders" },
     { id: "003", name: "Canvas API" },

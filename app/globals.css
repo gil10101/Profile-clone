@@ -55,18 +55,29 @@ body, html {
 /* Cursor animation */
 @keyframes cursor-blink {
   0% {
-    opacity: 0.1;
+    opacity: 0.3;
+    transform: scale(0.8);
   }
   50% {
     opacity: 1;
+    transform: scale(1.2);
   }
   100% {
-    opacity: 0.1;
+    opacity: 0.3;
+    transform: scale(0.8);
   }
 }
 
 .cursor {
   animation: cursor-blink 1s infinite;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e2e6e8;
+  mix-blend-mode: difference;
+  margin-left: 2px;
+  vertical-align: middle;
 }
 
 /* Section title styles */

@@ -26,7 +26,15 @@
 .greeting-component .cursor:before {
     -webkit-animation: c 1s infinite;
     animation: c 1s infinite;
-    content: '_'
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e2e6e8;
+    mix-blend-mode: difference;
+    margin-left: 2px;
+    vertical-align: middle;
 }
 
 .greeting-component.done .cursor {
@@ -723,41 +731,47 @@ button {
 
 @-webkit-keyframes c {
     0% {
-        opacity: .1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-        filter: alpha(opacity=10)
+        opacity: 0.3;
+        transform: scale(0.8);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30)
     }
 
     50% {
         opacity: 1;
+        transform: scale(1.2);
         -ms-filter: none;
         filter: none
     }
 
     to {
-        opacity: .1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-        filter: alpha(opacity=10)
+        opacity: 0.3;
+        transform: scale(0.8);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30)
     }
 }
 
 @keyframes c {
     0% {
-        opacity: .1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-        filter: alpha(opacity=10)
+        opacity: 0.3;
+        transform: scale(0.8);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30)
     }
 
     50% {
         opacity: 1;
+        transform: scale(1.2);
         -ms-filter: none;
         filter: none
     }
 
     to {
-        opacity: .1;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-        filter: alpha(opacity=10)
+        opacity: 0.3;
+        transform: scale(0.8);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30)
     }
 }
 
