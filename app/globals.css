@@ -68,18 +68,6 @@ body, html {
   }
 }
 
-.cursor {
-  animation: cursor-blink 1s infinite;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #e2e6e8;
-  mix-blend-mode: difference;
-  margin-left: 2px;
-  vertical-align: middle;
-}
-
 /* Section title styles */
 .section-title {
   @apply text-xs uppercase tracking-wider text-gray-500;

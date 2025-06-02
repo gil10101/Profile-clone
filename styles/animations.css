@@ -4,44 +4,41 @@
     display: inline-block
 }
 
-.typer-component .temp {
+/* .typer-component .temp {
     opacity: .25;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
     filter: alpha(opacity=25)
-}
+} */
 
-.greeting-component {
+/* .greeting-component {
     font-size: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: box;
     display: flex
-}
+} */
 
-.greeting-component .cursor {
+/* .greeting-component {
     -webkit-transition: opacity .5s ease;
-    transition: opacity .5s ease
-}
-
-.greeting-component .cursor:before {
-    -webkit-animation: c 1s infinite;
-    animation: c 1s infinite;
-    content: '';
+    transition: opacity .5s ease;
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #e2e6e8;
-    mix-blend-mode: difference;
-    margin-left: 2px;
-    vertical-align: middle;
 }
 
-.greeting-component.done .cursor {
+.greeting-component:before {
+    content: '_';
+    color: #e2e6e8;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    -webkit-animation: cursor-blink 1s infinite;
+    animation: cursor-blink 1s infinite;
+} */
+
+/* .greeting-component.done {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0)
-}
+} */
 
 .loader-component,.transition-component,.transition-component .canvas {
     position: absolute;
@@ -729,49 +726,21 @@ button {
     }
 }
 
-@-webkit-keyframes c {
-    0% {
-        opacity: 0.3;
-        transform: scale(0.8);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-        filter: alpha(opacity=30)
-    }
-
-    50% {
+@-webkit-keyframes cursor-blink {
+    0%, 50% {
         opacity: 1;
-        transform: scale(1.2);
-        -ms-filter: none;
-        filter: none
     }
-
-    to {
-        opacity: 0.3;
-        transform: scale(0.8);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-        filter: alpha(opacity=30)
+    51%, 100% {
+        opacity: 0;
     }
 }
 
-@keyframes c {
-    0% {
-        opacity: 0.3;
-        transform: scale(0.8);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-        filter: alpha(opacity=30)
-    }
-
-    50% {
+@keyframes cursor-blink {
+    0%, 50% {
         opacity: 1;
-        transform: scale(1.2);
-        -ms-filter: none;
-        filter: none
     }
-
-    to {
-        opacity: 0.3;
-        transform: scale(0.8);
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-        filter: alpha(opacity=30)
+    51%, 100% {
+        opacity: 0;
     }
 }
 
@@ -854,4 +823,4 @@ button {
     padding: 24px 16px;
     margin: auto;
     width: 100%
-} 
+}
